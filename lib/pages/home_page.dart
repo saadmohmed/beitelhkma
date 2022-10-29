@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 
 import '../models/Book.dart';
 import '../widgets/AppBar_helper.dart';
+import '../widgets/bottombar_item.dart';
+import '../widgets/helper.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -20,11 +22,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   ApiProvider _api = new ApiProvider();
+  int activeTab = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
       appBar:appbar(context),
+      bottomNavigationBar: getBottomBar('home',context),
+
       body: getStackBody(),
     );
   }
@@ -205,4 +211,6 @@ class _HomePageState extends State<HomePage> {
           }
         });
   }
+
+
 }

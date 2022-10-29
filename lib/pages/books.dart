@@ -6,6 +6,7 @@ import '../models/Book.dart';
 import '../services/ApiProvider.dart';
 import '../theme/colors.dart';
 import '../widgets/AppBar_helper.dart';
+import '../widgets/helper.dart';
 import 'book.dart';
 
 class BooksScreen extends StatefulWidget {
@@ -21,7 +22,9 @@ class _BooksScreenState extends State<BooksScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
+      bottomNavigationBar: getBottomBar('books',context),
+
       appBar:appbar(context),
       body: SingleChildScrollView(
         child: Column(

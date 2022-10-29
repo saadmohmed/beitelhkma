@@ -1,4 +1,5 @@
 import 'package:book_shop/Animation/FadeAnimation.dart';
+import 'package:book_shop/pages/CartScreen.dart';
 import 'package:book_shop/pages/book_review.dart';
 import 'package:book_shop/services/ApiProvider.dart';
 import 'package:flutter/material.dart';
@@ -107,6 +108,10 @@ class _BookDetailState extends State<BookDetail> {
                                       )
                                     ],
                                   ).show();
+                                  Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => CartScreen()),
+                                  );
                                 }else{
                                   setState(() {
                                     message = 'حدث خطا';
@@ -129,7 +134,11 @@ class _BookDetailState extends State<BookDetail> {
                                   ).show();                                }
                             },
                             child: Center(
-                              child: Text(' اضف الي السله', style: TextStyle(fontWeight: FontWeight.bold),)
+                              child: Text('شراء الأن', style:TextStyle(fontFamily: 'cairo',
+                                fontSize: 25.0,
+                                fontWeight: FontWeight.bold,
+                                color:const Color(0xFF15224F),
+                              ),)
                             ),
                           ),
                         ),

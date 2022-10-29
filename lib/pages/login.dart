@@ -108,7 +108,6 @@ class Login extends StatelessWidget {
                       dynamic _loginData =
                           await _api.login(email.text, password.text);
                       final storage = new FlutterSecureStorage();
-                      print(_loginData);
                       if (_loginData['data'] != null) {
                         dynamic data = _loginData['data'];
                         await storage.write(key: 'name', value: data['name']);

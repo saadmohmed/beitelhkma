@@ -54,7 +54,26 @@ class ApiProvider{
     }
     return null;
   }
-
+Future check_coupon(dynamic code) async {
+  final storage = new FlutterSecureStorage();
+  final api_token = await storage.read(
+    key: 'api_token',
+  );
+  final http.Response response = await http.post(
+    Uri.parse('${CHECKCOUPON}?api_token=$api_token'),
+    headers: <String, String>{
+      'Accept': 'application/json; charset=UTF-8',
+      'Access-Control-Allow-Origin': '*'
+    },
+    body: {
+      'coupon':code
+    },
+  );
+  if (response.statusCode == 200) {
+    return json.decode(response.body);
+  }
+  return null;
+}
   Future add_to_cart(String book_id) async {
     final storage = new FlutterSecureStorage();
     final api_token = await storage.read(

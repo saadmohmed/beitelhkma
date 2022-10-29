@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:book_shop/pages/home.dart';
+import 'package:book_shop/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:book_shop/pages/login.dart';
 import 'package:book_shop/services/ApiProvider.dart';
@@ -36,7 +37,7 @@ class _WrapperState extends State<Wrapper> {
                     scheduleMicrotask(() {
                       Navigator.pushReplacement(
                         context,
-                        MaterialPageRoute(builder: (context) => Home()),
+                        MaterialPageRoute(builder: (context) => HomePage()),
                       );
                     });
                   }

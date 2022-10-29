@@ -12,3 +12,4 @@ const CART = '${BASE_URL}/api/cart';
 const ADD_TO_CART = '${BASE_URL}/api/cart/add';
 const ADD_ORDER = '${BASE_URL}/api/order/add';
 const MY_BOOKS = '${BASE_URL}/api/mybooks';
+const CHECKCOUPON = '${BASE_URL}/api/checkcoupon';

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "881703935073",
+    "project_id": "beitelhkma",
+    "storage_bucket": "beitelhkma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:881703935073:android:13513080c2ccc03dce5e20",
+        "android_client_info": {
+          "package_name": "com.example.book_shop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "881703935073-ae6d405gh30jfjflorcc5l60r5dcqf06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMq3wZPGF_7C7QxaAEZsDzylgARjx6Xmc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "881703935073-ae6d405gh30jfjflorcc5l60r5dcqf06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
