@@ -1,6 +1,9 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:book_shop/models/Book.dart';
+import 'package:book_shop/pages/book.dart';
+import 'package:book_shop/services/ApiProvider.dart';
 import 'package:book_shop/widgets/helper.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +23,7 @@ class _QRViewerState extends State<QRViewer> {
   Barcode? result;
   QRViewController? controller;
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
-
+  ApiProvider _api = new ApiProvider();
   // In order to get hot reload to work we need to pause the camera if the platform
   // is android, or resume the camera if the platform is iOS.
   @override
@@ -40,23 +43,25 @@ class _QRViewerState extends State<QRViewer> {
         
         children: <Widget>[
           Expanded(flex: 4, child: _buildQrView(context)),
-          Expanded(
-            flex: 1,
-            child: FittedBox(
-              fit: BoxFit.contain,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  if (result != null)
-                    Text(
-                        'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
-                  else
-                    const Text('وجه الكاميرا امام الكود', style: TextStyle(fontSize: 12),),
-
-                ],
-              ),
-            ),
-          )
+          // Expanded(
+          //   flex: 1,
+          //   child: FittedBox(
+          //     fit: BoxFit.contain,
+          //     child: Column(
+          //       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          //       children: <Widget>[
+          //
+          //         if (result != null)
+          //           Text(
+          //               'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
+          //
+          //         else
+          //           const Text('وجه الكاميرا امام الكود', style: TextStyle(fontSize: 12),),
+          //
+          //       ],
+          //     ),
+          //   ),
+          // )
         ],
       ),
     );
@@ -87,9 +92,20 @@ class _QRViewerState extends State<QRViewer> {
     setState(() {
       this.controller = controller;
     });
-    controller.scannedDataStream.listen((scanData) {
+    controller.scannedDataStream.listen((scanData)async {
+      ApiProvider _api = new ApiProvider();
+     Book book =  await  _api.book(scanData.code);
+     if(book != null){
+       Navigator.pushReplacement(
+         context,
+         MaterialPageRoute(builder: (context) => BookDetail(image: book.image, desc: book.content,
+             file: book.data_file, id: book.id)),
+       );
+     }
       setState(() {
         result = scanData;
+
+
       });
     });
   }

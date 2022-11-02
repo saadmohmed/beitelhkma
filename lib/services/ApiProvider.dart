@@ -224,6 +224,43 @@ Future check_coupon(dynamic code) async {
     }
     return books;
   }
+  Future<Book> book(dynamic id  ) async{
+
+    final storage = new FlutterSecureStorage();
+    final api_token = await storage.read(
+      key: 'api_token',
+    );
+    Book book = new Book() ;
+    final http.Response response = await http.get(
+      Uri.parse(BOOKS+"?api_token="+api_token!+'&id='+id),
+      headers:<String , String>{
+        'Accept': 'application/json; charset=UTF-8',
+        'Access-Control-Allow-Origin': '*'
+      },
+
+    );
+    if (response.statusCode == 200) {
+
+
+      dynamic body = json.decode(response.body);
+      body["data"].forEach((elemnt){
+        book = new Book(
+            id: elemnt['id'],
+            title: elemnt['title'] ,
+            price: elemnt["price"],
+            image: elemnt['preview'],
+            discount: elemnt["price"],
+            data_file: elemnt["file_data"],
+            content: elemnt["content"]
+
+        );
+
+      });
+
+
+    }
+    return book;
+  }
 
   Future<bool> user() async {
     final storage = new FlutterSecureStorage();
