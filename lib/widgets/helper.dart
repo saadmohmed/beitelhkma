@@ -1,6 +1,6 @@
-import 'package:book_shop/pages/CartScreen.dart';
 import 'package:book_shop/pages/books.dart';
 import 'package:book_shop/pages/mybook.dart';
+import 'package:book_shop/pages/qr.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -41,15 +41,15 @@ Widget getBottomBar(String is_active, context) {
                 },
                 child: BottomBarItem(Icons.my_library_books_rounded, "", isActive: is_active == 'books' ? true: false, activeColor: secondary),
               ),
-              // GestureDetector(
-              //   onTap: () {
-              //     Navigator.pushReplacement(
-              //       context,
-              //       MaterialPageRoute(builder: (context) => CartScreen()),
-              //     );
-              //   },
-              //   child: BottomBarItem(Icons.shopping_cart, "", isActive:is_active == 'cart' ? true: false, activeColor: secondary),
-              // ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(builder: (context) => QRViewer()),
+                  );
+                },
+                child: BottomBarItem(Icons.qr_code, "", isActive:is_active == 'code' ? true: false, activeColor: secondary),
+              ),
               GestureDetector(
                 onTap: () {
                   Navigator.pushReplacement(

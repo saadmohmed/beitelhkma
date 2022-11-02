@@ -48,6 +48,7 @@ dependencies:
   rflutter_alert: ^2.0.4
   firebase_core:
   firebase_messaging:
+  qr_code_scanner: ^1.0.1
 
 
 
