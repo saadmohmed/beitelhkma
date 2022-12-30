@@ -49,9 +49,10 @@ class ApiProvider{
         'password': password,
       },
     );
-    if (response.statusCode == 200) {
+    print(json.decode(response.body));
+    // if (response.statusCode == 200) {
       return json.decode(response.body);
-    }
+    // }
     return null;
   }
 Future check_coupon(dynamic code) async {

@@ -46,6 +46,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
   @override
   Widget build(BuildContext context) {
+    print(widget.url);
     return WillPopScope(
       onWillPop: () async {
         final shouldPop = await   Navigator.pushReplacement(

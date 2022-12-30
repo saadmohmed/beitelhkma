@@ -166,7 +166,7 @@ class Login extends StatelessWidget {
     return Text.rich(
       TextSpan(
         style: new TextStyle(fontFamily: 'cairo',
-          fontSize: 25.0,
+          fontSize: 20.0,
           fontWeight: FontWeight.bold,
           color:const Color(0xFF21899C),
 
@@ -226,7 +226,7 @@ class Login extends StatelessWidget {
         decoration: InputDecoration(
             labelText: 'البريد الألكتروني',
             labelStyle: new TextStyle(fontFamily: 'cairo',
-              fontSize: 25.0,
+              fontSize: 15.0,
               color:const Color(0xFF21899C),
 
             ),
@@ -267,7 +267,7 @@ class Login extends StatelessWidget {
         decoration: InputDecoration(
             labelText: 'كلمةالسر',
             labelStyle: new TextStyle(fontFamily: 'cairo',
-              fontSize: 25.0,
+              fontSize: 15.0,
               color:const Color(0xFF21899C),
 
             ),

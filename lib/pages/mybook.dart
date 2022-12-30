@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import '../models/Book.dart';
 import '../services/ApiProvider.dart';
 import '../widgets/AppBar_helper.dart';
+import '../widgets/helper.dart';
 import 'book_review.dart';
 
 class MyBook extends StatefulWidget {
@@ -18,7 +19,9 @@ class _MyBookState extends State<MyBook> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.transparent,
+      backgroundColor: Colors.white,
+      bottomNavigationBar: getBottomBar('mybook',context),
+
       appBar:appbar(context),
       body: SingleChildScrollView(
         child: Center(

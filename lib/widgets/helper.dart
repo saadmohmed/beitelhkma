@@ -25,7 +25,7 @@ Widget getBottomBar(String is_active, context) {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => HomePage()),
                   );
@@ -34,7 +34,7 @@ Widget getBottomBar(String is_active, context) {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => BooksScreen()),
                   );
@@ -43,7 +43,7 @@ Widget getBottomBar(String is_active, context) {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => QRViewer()),
                   );
@@ -52,7 +52,7 @@ Widget getBottomBar(String is_active, context) {
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MyBook()),
                   );
@@ -62,7 +62,7 @@ Widget getBottomBar(String is_active, context) {
 
               GestureDetector(
                 onTap: () {
-                  Navigator.pushReplacement(
+                  Navigator.push(
                     context,
                     MaterialPageRoute(builder: (context) => MyBook()),
                   );

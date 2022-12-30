@@ -54,7 +54,6 @@ class BookCard extends StatelessWidget {
                   ),
                 ),
               ),
-              SizedBox(height: 15,),
               Text(book.title,
                 maxLines: 2, overflow: TextOverflow.ellipsis, textAlign: TextAlign.center,
                 style:new TextStyle(fontFamily: 'cairo',
@@ -63,7 +62,6 @@ class BookCard extends StatelessWidget {
 
                 )
               ),
-              SizedBox(height: 8,),
               RichText(
                 textAlign: TextAlign.center,
                 text: TextSpan(

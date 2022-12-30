@@ -1,4 +1,4 @@
-const BASE_URL = 'https://book.ejad-dev.com';
+const BASE_URL = 'https://app.bthikme.com';
 // const BASE_URL = 'http://10.0.2.2:8001';
 
 const BOOKS = '${BASE_URL}/api/books';
